@@ -3,7 +3,21 @@ This project is a part of the Fetch Machine Learning Take-Home Test. It features
 
 ## Overview
 
-Provide a brief introduction to your project. What does it do, and why is it important?
+### Problem Statement
+In this project, I tackled a critical business challenge at Fetch, focusing on monitoring the daily number of scanned receipts, a key performance indicator (KPI) for the company.  With an eye on predictive analytics, I aimed to forecast the number of scanned receipts for future months, providing valuable insights for planning and decision-making.
+
+###Solution:
+
+To address this business challenge, I devised a comprehensive solution:
+1. **Data Source and Preparation:** I began by collecting and preparing historical data. The dataset contained the daily counts of scanned receipts throughout the year 2021, serving as a valuable source of information.
+
+2. **Machine Learning Models:** I developed a predictive algorithm that blends two robust machine learning models, ARIMA (AutoRegressive Integrated Moving Average) and XGBoost. These models were fine-tuned to effectively forecast the monthly counts for the year 2022.
+
+3. **RShiny Web Application:** To facilitate user-friendly access to the predictive capabilities, I built an interactive RShiny web application. This application enables users to run inference procedures and obtain predictions for the scanned receipt counts.
+
+4. **Docker Containerization:** For ease of deployment and utilization, I packaged the RShiny app within a Docker container. This approach simplifies the process of building and running the application locally, utilizing Docker Hub.
+
+By combining these elements, I created a robust solution that not only predicts future scanned receipt counts but also streamlines the prediction process for users, ensuring that Fetch can make data-driven decisions with confidence.
 
 ## Table of Contents
 
