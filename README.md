@@ -6,7 +6,7 @@ This project is a part of the Fetch Machine Learning Take-Home Test. It features
 ### Problem Statement
 In this project, I tackled a critical business challenge at Fetch, focusing on monitoring the daily number of scanned receipts, a key performance indicator (KPI) for the company.  With an eye on predictive analytics, I aimed to forecast the number of scanned receipts for future months, providing valuable insights for planning and decision-making.
 
-###Solution:
+### Solution:
 
 To address this business challenge, I devised a comprehensive solution:
 1. **Data Source and Preparation:** I began by collecting and preparing historical data. The dataset contained the daily counts of scanned receipts throughout the year 2021, serving as a valuable source of information.
