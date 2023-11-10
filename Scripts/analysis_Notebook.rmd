@@ -2,13 +2,13 @@
 title: "Analysis Notebook"
 author: "Yaksh Toyesh Ujoodha"
 date: "2023-10-31"
-output:
-  md_document:
-      variant: markdown_github
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+#  md_document:
+#      variant: markdown_github
 ```
 
 ## Goal
@@ -52,4 +52,16 @@ Our dataset now looks clean and ready for analysis.
 head(fetch_daily_receipt_count_df)
 summary(fetch_daily_receipt_count_df)
 ```
-## Analysis
+## Exploratory Data Analysis
+Let's first plot our time series dataset and get an overview of the situation. 
+```{r}
+#Plotting
+library(ggplot2)
+graph_plot <- ggplot(data = fetch_daily_receipt_count_df, aes(x = date_of_receipt_count,
+                                                              y = receipt_count))
+graph_plot <- graph_plot + geom_line(color = 'blue') + labs(x = 'Date',
+                                                            y = 'Number of receipts Fetch received')
+graph_plot
+```
+
+---Improve the plot and push to Git

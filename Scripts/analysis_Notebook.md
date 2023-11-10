@@ -94,4 +94,18 @@ summary(fetch_daily_receipt_count_df)
     ##  3rd Qu.:2021-10-01    3rd Qu.: 9476970  
     ##  Max.   :2021-12-31    Max.   :10738865
 
-## Analysis
+## Exploratory Data Analysis
+
+Let’s first plot our time series dataset and get an overview of the
+situation.
+
+``` r
+#Plotting
+library(ggplot2)
+graph_plot <- ggplot(data = fetch_daily_receipt_count_df, aes(x = date_of_receipt_count,
+                                                              y = receipt_count))
+graph_plot <- graph_plot + geom_area()
+graph_plot
+```
+
+![](analysis_Notebook_files/figure-markdown_github/unnamed-chunk-6-1.png)
