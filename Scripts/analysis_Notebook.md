@@ -11,10 +11,6 @@ steps taken for statistical modelling.
 
 Let’s load all the required for this project:
 
-``` r
-#This code appears
-```
-
 Below is an overview of the data:
 
 ``` r
@@ -29,3 +25,73 @@ head(fetch_daily_receipt_count_df)
     ## 4 2021-01-04       7666163
     ## 5 2021-01-05       7771289
     ## 6 2021-01-06       7473320
+
+Let’s do some data pre-processing and data cleaning:
+
+``` r
+#Formatting column names to lowercase.
+names(fetch_daily_receipt_count_df) <- tolower(names(fetch_daily_receipt_count_df))
+
+# Rename the "# date" column to "date_receipt_count"
+names(fetch_daily_receipt_count_df)[1] <- "date_of_receipt_count"
+
+head(fetch_daily_receipt_count_df)
+```
+
+    ##   date_of_receipt_count receipt_count
+    ## 1            2021-01-01       7564766
+    ## 2            2021-01-02       7455524
+    ## 3            2021-01-03       7095414
+    ## 4            2021-01-04       7666163
+    ## 5            2021-01-05       7771289
+    ## 6            2021-01-06       7473320
+
+Let’s check the data types of the columns:
+
+``` r
+str(fetch_daily_receipt_count_df)
+```
+
+    ## 'data.frame':    365 obs. of  2 variables:
+    ##  $ date_of_receipt_count: chr  "2021-01-01" "2021-01-02" "2021-01-03" "2021-01-04" ...
+    ##  $ receipt_count        : int  7564766 7455524 7095414 7666163 7771289 7473320 7832624 7765028 7385245 7392087 ...
+
+For further analysis, we need to convert the ‘date_of_receipt_count’
+column to Date data type.
+
+``` r
+fetch_daily_receipt_count_df$date_of_receipt_count <- as.Date(fetch_daily_receipt_count_df$date_of_receipt_count)
+str(fetch_daily_receipt_count_df)
+```
+
+    ## 'data.frame':    365 obs. of  2 variables:
+    ##  $ date_of_receipt_count: Date, format: "2021-01-01" "2021-01-02" ...
+    ##  $ receipt_count        : int  7564766 7455524 7095414 7666163 7771289 7473320 7832624 7765028 7385245 7392087 ...
+
+Our dataset now looks clean and ready for analysis.
+
+``` r
+head(fetch_daily_receipt_count_df)
+```
+
+    ##   date_of_receipt_count receipt_count
+    ## 1            2021-01-01       7564766
+    ## 2            2021-01-02       7455524
+    ## 3            2021-01-03       7095414
+    ## 4            2021-01-04       7666163
+    ## 5            2021-01-05       7771289
+    ## 6            2021-01-06       7473320
+
+``` r
+summary(fetch_daily_receipt_count_df)
+```
+
+    ##  date_of_receipt_count receipt_count     
+    ##  Min.   :2021-01-01    Min.   : 7095414  
+    ##  1st Qu.:2021-04-02    1st Qu.: 8142874  
+    ##  Median :2021-07-02    Median : 8799249  
+    ##  Mean   :2021-07-02    Mean   : 8826566  
+    ##  3rd Qu.:2021-10-01    3rd Qu.: 9476970  
+    ##  Max.   :2021-12-31    Max.   :10738865
+
+## Analysis

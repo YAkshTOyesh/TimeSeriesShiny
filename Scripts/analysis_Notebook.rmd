@@ -2,7 +2,9 @@
 title: "Analysis Notebook"
 author: "Yaksh Toyesh Ujoodha"
 date: "2023-10-31"
-output: html_document
+output:
+  md_document:
+      variant: markdown_github
 ---
 
 ```{r setup, include=FALSE}
@@ -19,12 +21,35 @@ This document provides a walk through of analysing Fetch's data and the steps ta
 
 Let's load all the required for this project:
 
-```{r, echo=TRUE}
-#This code appears
-```
 Below is an overview of the data:
+
 ```{r, eval=TRUE}
 fetch_daily_receipt_count_df <- read.csv('Data/data_daily.csv')
 head(fetch_daily_receipt_count_df)
 ```
+Let's do some data pre-processing and data cleaning:
 
+```{r, echo=TRUE}
+#Formatting column names to lowercase.
+names(fetch_daily_receipt_count_df) <- tolower(names(fetch_daily_receipt_count_df))
+
+# Rename the "# date" column to "date_receipt_count"
+names(fetch_daily_receipt_count_df)[1] <- "date_of_receipt_count"
+
+head(fetch_daily_receipt_count_df)
+```
+Let's check the data types of the columns:
+```{r, echo=TRUE}
+str(fetch_daily_receipt_count_df)
+```
+For further analysis, we need to convert the 'date_of_receipt_count' column to Date data type.
+```{r}
+fetch_daily_receipt_count_df$date_of_receipt_count <- as.Date(fetch_daily_receipt_count_df$date_of_receipt_count)
+str(fetch_daily_receipt_count_df)
+```
+Our dataset now looks clean and ready for analysis.
+```{r}
+head(fetch_daily_receipt_count_df)
+summary(fetch_daily_receipt_count_df)
+```
+## Analysis
