@@ -134,5 +134,4 @@ $$series = trend + seasonality + cycles + error$$
 Variables may oscillate around a ***stable*** <ins>*average value*</ins>, or
 they may have an <ins>*overall tendency*</ins> to either go ***downwards***
 or ***upwards***.
-
 This overall direction in which variables move is called ***trend***.
