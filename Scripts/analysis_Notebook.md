@@ -127,8 +127,9 @@ over time is crucial when constructing an accurate prediction model.
 
 A time series relationship can be decomposed as follows:
 
-*s**e**r**i**e**s* = *t**r**e**n**d* + *s**e**a**s**o**n**a**l**i**t**y* + *c**y**c**l**e**s* + *e**r**r**o**r*
-
+```math
+series* = trend + seasonality + cycles + error
+```
 ### *Trend*
 
 Variables may oscillate around a ***stable*** *<u>average value</u>*, or
