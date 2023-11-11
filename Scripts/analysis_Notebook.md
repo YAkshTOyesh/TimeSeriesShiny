@@ -127,13 +127,12 @@ over time is crucial when constructing an accurate prediction model.
 
 A time series relationship can be decomposed as follows:
 
-```math
-series = trend + seasonality + cycles + error
-```
+$$series = trend + seasonality + cycles + error$$
+
 ### *Trend*
 
-Variables may oscillate around a ***stable*** *<ins>average value</ins>*, or
-they may have an *<ins>overall tendency</ins>* to either go ***downwards***
+Variables may oscillate around a ***stable*** <ins>*average value*</ins>, or
+they may have an <ins>*overall tendency*</ins> to either go ***downwards***
 or ***upwards***.
 
 This overall direction in which variables move is called ***trend***.
